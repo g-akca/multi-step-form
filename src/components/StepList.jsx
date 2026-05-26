@@ -18,7 +18,7 @@ const steps = [
 
 function StepList() {
   return (
-    <div className="flex gap-4 items-center">
+    <div className="self-center flex gap-4 items-center">
       {steps.map(step => (
         <StepItem
           key={step.number}

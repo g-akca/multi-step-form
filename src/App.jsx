@@ -5,13 +5,13 @@ import FormFooter from "./components/FormFooter";
 function App() {
   return (
     <div className="text-base leading-base text-grey-500 min-h-screen bg-blue-100 flex flex-col pt-8 bg-[url('/images/bg-sidebar-mobile.svg')] bg-no-repeat bg-top bg-contain">
-      <main className="grow flex flex-col gap-8 items-center">
+      <main className="grow flex flex-col gap-8">
         <StepList />
 
-        <div className="grow flex flex-col gap-6 justify-between">
+        <form className="grow flex flex-col gap-6 justify-between px-4">
           <FormSection />
           <FormFooter />
-        </div>
+        </form>
       </main>
     </div>
   )
