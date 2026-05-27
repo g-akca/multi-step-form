@@ -1,6 +1,6 @@
 function FormSection() {
   return (
-    <div className="bg-white rounded-[10px] px-6 py-8 flex flex-col gap-6 shadow-[0_25px_40px_rgba(0,0,0,0.1)]">
+    <div className="bg-white rounded-[10px] px-6 py-8 flex flex-col gap-6 shadow-[0_25px_40px_rgba(0,0,0,0.095)]">
       <div className="flex flex-col gap-2">
         <h2 className="text-blue-950 text-[24px] leading-[120%] font-bold">Personal info</h2>
         <p>Please provide your name, email address, and phone number.</p>
