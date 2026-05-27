@@ -22,7 +22,10 @@ function App() {
         />
 
         <form className="grow flex flex-col gap-6 justify-between px-4">
-          <FormSection />
+          <FormSection
+            currentStep={currentStep}
+          />
+
           {currentStep <= 4 && (
             <FormFooter 
               currentStep={currentStep}
