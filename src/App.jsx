@@ -6,16 +6,26 @@ import { useState } from "react";
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
 
+  function goNextStep() {
+    if (currentStep <= 4) setCurrentStep(prev => prev + 1);
+  }
+
+  function goPrevStep() {
+    if (currentStep >= 2) setCurrentStep(prev => prev - 1);
+  }
+
   return (
     <div className="text-base leading-base text-grey-500 min-h-screen bg-blue-100 flex flex-col pt-8 bg-[url('/images/bg-sidebar-mobile.svg')] bg-no-repeat bg-top bg-contain">
       <main className="grow flex flex-col gap-8">
-        <StepList currentStep={currentStep} />
+        <StepList 
+          currentStep={currentStep} 
+        />
 
         <form className="grow flex flex-col gap-6 justify-between px-4">
           <FormSection />
           <FormFooter 
-            goNextStep={() => setCurrentStep(prev => prev + 1)} 
-            goPrevStep={() => setCurrentStep(prev => prev - 1)} 
+            goNextStep={goNextStep} 
+            goPrevStep={goPrevStep} 
           />
         </form>
       </main>
