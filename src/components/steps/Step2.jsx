@@ -47,11 +47,9 @@ function Step2({ monthly, setMonthly }) {
           {plans.map(plan => (
             <PlanItem 
               key={plan.id}
-              id={plan.id}
-              name={plan.name}
-              icon={plan.icon}
-              price={plan.price}
+              plan={plan}
               check={plan.id === "arcade"}
+              monthly={monthly}
             />
           ))}
         </div>
