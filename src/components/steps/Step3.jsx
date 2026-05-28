@@ -1,6 +1,36 @@
 import AddOnItem from "./AddOnItem";
 
-function Step3() {
+const addons = [
+  {
+    id: "service",
+    name: "Online service",
+    details: "Access to multiplayer games",
+    price: {
+      monthly: 1,
+      yearly: 10
+    }
+  },
+  {
+    id: "storage",
+    name: "Larger storage",
+    details: "Extra 1TB of cloud save",
+    price: {
+      monthly: 2,
+      yearly: 20
+    }
+  },
+  {
+    id: "profile",
+    name: "Customizable profile",
+    details: "Custom theme on your profile",
+    price: {
+      monthly: 2,
+      yearly: 20
+    }
+  }
+];
+
+function Step3({ monthly }) {
   return (
     <>
       <div className="flex flex-col gap-2">
@@ -9,9 +39,13 @@ function Step3() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <AddOnItem />
-        <AddOnItem />
-        <AddOnItem />
+        {addons.map(addon => (
+          <AddOnItem
+            key={addon.id}
+            addon={addon}
+            monthly={monthly}
+          />
+        ))}
       </div>
     </>
   )

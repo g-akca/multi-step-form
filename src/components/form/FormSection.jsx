@@ -9,7 +9,7 @@ function FormSection({ currentStep }) {
   const steps = {
     1: <Step1 />,
     2: <Step2 monthly={monthly} setMonthly={setMonthly} />,
-    3: <Step3 monthly={monthly} setMonthly={setMonthly} />
+    3: <Step3 monthly={monthly} />
   }
 
   return (
