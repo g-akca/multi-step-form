@@ -1,4 +1,6 @@
-function Step2() {
+import SwitchButton from "./SwitchButton";
+
+function Step2({ monthly, setMonthly }) {
   return (
     <>
       <div className="flex flex-col gap-2">
@@ -11,8 +13,12 @@ function Step2() {
 
         </div>
 
-        <div className="bg-blue-50 rounded-lg">
+        <div className="bg-blue-50 rounded-lg h-12 flex justify-center items-center gap-6 text-[14px] leading-base font-medium">
+          <p className={monthly ? "text-blue-950" : ""}>Monthly</p>
+          
+          <SwitchButton monthly={monthly} setMonthly={setMonthly} />
 
+          <p className={monthly ? "" : "text-blue-950"}>Yearly</p>
         </div>
       </div>
     </>
