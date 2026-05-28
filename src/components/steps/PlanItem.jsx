@@ -5,7 +5,7 @@ function PlanItem({ plan, check, monthly }) {
 
       <img className="h-10 aspect-square rounded-full" src={plan.icon} alt={plan.name} />
 
-      <div>
+      <div className={monthly ? "" : "flex flex-col gap-1"}>
         <p className="leading-[120%] text-blue-950 font-medium">{plan.name}</p>
         <p className="text-[14px] leading-[120%]">${monthly ? plan.price.monthly : plan.price.yearly}/{monthly ? "mo" : "yr"}</p>
         {monthly || (
