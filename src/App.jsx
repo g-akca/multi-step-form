@@ -15,7 +15,7 @@ function App() {
   }
 
   return (
-    <div className="text-base leading-base text-grey-500 min-h-screen bg-blue-100 flex flex-col pt-8 bg-[url('/images/bg-sidebar-mobile.svg')] bg-no-repeat bg-top bg-contain">
+    <div className="text-base leading-base text-grey-500 min-h-screen bg-blue-100 flex flex-col pt-8 pb-26 bg-[url('/images/bg-sidebar-mobile.svg')] bg-no-repeat bg-top bg-contain">
       <main className="grow flex flex-col gap-8">
         <StepList 
           currentStep={currentStep} 
