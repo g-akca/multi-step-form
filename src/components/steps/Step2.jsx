@@ -1,3 +1,4 @@
+import { useFormContext } from "react-hook-form";
 import PlanItem from "./PlanItem";
 import SwitchButton from "./SwitchButton";
 import arcadeIcon from "/images/icon-arcade.svg";
@@ -34,7 +35,10 @@ const plans = [
   }
 ];
 
-function Step2({ monthly, setMonthly }) {
+function Step2() {
+  const { register, watch, setValue } = useFormContext();
+  const billing = watch("billing");
+
   return (
     <>
       <div className="flex flex-col gap-2">
@@ -48,18 +52,18 @@ function Step2({ monthly, setMonthly }) {
             <PlanItem 
               key={plan.id}
               plan={plan}
-              check={plan.id === "arcade"}
-              monthly={monthly}
+              register={register}
+              monthly={billing === "monthly"}
             />
           ))}
         </div>
 
         <div className="bg-blue-50 rounded-lg h-12 flex justify-center items-center gap-6 text-[14px] leading-base font-medium">
-          <p className={monthly ? "text-blue-950" : ""}>Monthly</p>
+          <p className={billing === "monthly" ? "text-blue-950" : ""}>Monthly</p>
           
-          <SwitchButton monthly={monthly} setMonthly={setMonthly} />
+          <SwitchButton billing={billing} setBilling={value => setValue("billing", value)} />
 
-          <p className={monthly ? "" : "text-blue-950"}>Yearly</p>
+          <p className={billing !== "monthly" ? "text-blue-950" : ""}>Yearly</p>
         </div>
       </div>
     </>

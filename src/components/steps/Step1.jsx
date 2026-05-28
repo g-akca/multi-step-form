@@ -1,4 +1,8 @@
+import { useFormContext } from "react-hook-form";
+
 function Step1() {
+  const { register } = useFormContext();
+
   return (
     <>
       <div className="flex flex-col gap-2">
@@ -9,17 +13,35 @@ function Step1() {
       <div className="flex flex-col gap-4 text-blue-950 text-[12px] leading-[120%]">
         <div className="flex flex-col gap-2">
           <label htmlFor="name">Name</label>
-          <input id="name" type="text" placeholder="e.g. Stephen King" className="px-4 py-2 h-10 rounded-sm border border-purple-200 text-[14px] leading-base font-medium" />
+          <input
+            id="name"
+            type="text"
+            placeholder="e.g. Stephen King"
+            className="px-4 py-2 h-10 rounded-sm border border-purple-200 text-[14px] leading-base font-medium"
+            {...register("name")}
+          />
         </div>
 
         <div className="flex flex-col gap-2">
           <label htmlFor="email">Email Address</label>
-          <input id="email" type="email" placeholder="e.g. stephenking@lorem.com" className="px-4 py-2 h-10 rounded-sm border border-purple-200 text-[14px] leading-base font-medium" />
+          <input
+            id="email"
+            type="email"
+            placeholder="e.g. stephenking@lorem.com"
+            className="px-4 py-2 h-10 rounded-sm border border-purple-200 text-[14px] leading-base font-medium"
+            {...register("email")}
+          />
         </div>
 
         <div className="flex flex-col gap-2">
           <label htmlFor="phone">Phone Number</label>
-          <input id="phone" type="tel" placeholder="e.g. +1 234 567 890" className="px-4 py-2 h-10 rounded-sm border border-purple-200 text-[14px] leading-base font-medium text-center" />
+          <input
+            id="phone"
+            type="tel"
+            placeholder="e.g. +1 234 567 890"
+            className="px-4 py-2 h-10 rounded-sm border border-purple-200 text-[14px] leading-base font-medium text-center"
+            {...register("phone")}
+          />
         </div>
       </div>
     </>

@@ -1,7 +1,14 @@
-function PlanItem({ plan, check, monthly }) {
+function PlanItem({ plan, register, monthly }) {
   return (
     <label className="h-20 p-4 rounded-lg bg-white border border-purple-200 flex gap-4 items-center has-checked:bg-blue-50 has-checked:border-purple-600">
-      <input type="radio" name="plan" id={plan.id} className="hidden" defaultChecked={check} />
+      <input
+        type="radio"
+        name="plan"
+        id={plan.id}
+        className="hidden"
+        value={plan.id}
+        {...register("plan")}
+      />
 
       <img className="h-10 aspect-square rounded-full" src={plan.icon} alt={plan.name} />
 

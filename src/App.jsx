@@ -2,9 +2,24 @@ import StepList from "./components/nav/StepList";
 import FormSection from "./components/form/FormSection";
 import FormFooter from "./components/form/FormFooter";
 import { useState } from "react";
+import { FormProvider, useForm } from "react-hook-form";
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
+
+  const methods = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      plan: "arcade",
+      billing: "monthly",
+      service: false,
+      storage: false,
+      profile: false
+    },
+    shouldUnregister: false
+  });
 
   function goNextStep() {
     if (currentStep <= 4) setCurrentStep(prev => prev + 1);
@@ -21,19 +36,21 @@ function App() {
           currentStep={currentStep} 
         />
 
-        <form className="grow flex flex-col gap-6 justify-between px-4">
-          <FormSection
-            currentStep={currentStep}
-          />
-
-          {currentStep <= 4 && (
-            <FormFooter 
+        <FormProvider {...methods}>
+          <form className="grow flex flex-col gap-6 justify-between px-4">
+            <FormSection
               currentStep={currentStep}
-              goNextStep={goNextStep} 
-              goPrevStep={goPrevStep} 
             />
-          )}
-        </form>
+
+            {currentStep <= 4 && (
+              <FormFooter 
+                currentStep={currentStep}
+                goNextStep={goNextStep} 
+                goPrevStep={goPrevStep} 
+              />
+            )}
+          </form>
+        </FormProvider>
       </main>
     </div>
   )

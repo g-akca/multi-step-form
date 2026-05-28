@@ -1,3 +1,4 @@
+import { useFormContext } from "react-hook-form";
 import AddOnItem from "./AddOnItem";
 
 const addons = [
@@ -30,7 +31,10 @@ const addons = [
   }
 ];
 
-function Step3({ monthly }) {
+function Step3() {
+  const { watch, register } = useFormContext();
+  const billing = watch("billing");
+
   return (
     <>
       <div className="flex flex-col gap-2">
@@ -43,7 +47,8 @@ function Step3({ monthly }) {
           <AddOnItem
             key={addon.id}
             addon={addon}
-            monthly={monthly}
+            monthly={billing === "monthly"}
+            register={register}
           />
         ))}
       </div>
