@@ -1,11 +1,14 @@
 import PlanItem from "./PlanItem";
 import SwitchButton from "./SwitchButton";
+import arcadeIcon from "/images/icon-arcade.svg";
+import advancedIcon from "/images/icon-advanced.svg";
+import proIcon from "/images/icon-pro.svg";
 
 const plans = [
   {
     id: "arcade",
     name: "Arcade",
-    iconSrc: "/images/icon-arcade.svg",
+    icon: arcadeIcon,
     price: {
       monthly: 9,
       yearly: 90
@@ -14,7 +17,7 @@ const plans = [
   {
     id: "advanced",
     name: "Advanced",
-    iconSrc: "/images/icon-advanced.svg",
+    icon: advancedIcon,
     price: {
       monthly: 12,
       yearly: 120
@@ -23,7 +26,7 @@ const plans = [
   {
     id: "pro",
     name: "Pro",
-    iconSrc: "/images/icon-pro.svg",
+    icon: proIcon,
     price: {
       monthly: 15,
       yearly: 150
@@ -46,8 +49,9 @@ function Step2({ monthly, setMonthly }) {
               key={plan.id}
               id={plan.id}
               name={plan.name}
-              iconSrc={plan.iconSrc}
+              icon={plan.icon}
               price={plan.price}
+              check={plan.id === "arcade"}
             />
           ))}
         </div>
