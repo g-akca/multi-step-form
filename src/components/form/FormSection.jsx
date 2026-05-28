@@ -1,5 +1,5 @@
-import Step1 from "./Step1";
-import Step2 from "./Step2";
+import Step1 from "../steps/Step1";
+import Step2 from "/src/components/steps/Step2";
 
 const steps = {
   1: <Step1 />,

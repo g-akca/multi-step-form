@@ -1,6 +1,6 @@
-import StepList from "./components/StepList";
-import FormSection from "./components/FormSection";
-import FormFooter from "./components/FormFooter";
+import StepList from "./components/nav/StepList";
+import FormSection from "./components/form/FormSection";
+import FormFooter from "./components/form/FormFooter";
 import { useState } from "react";
 
 function App() {
