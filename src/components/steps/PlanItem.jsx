@@ -1,4 +1,4 @@
-function PlanItem() {
+function PlanItem({ id, name, iconSrc, price }) {
   return (
     <label className="h-20 p-4 rounded-lg bg-white border border-purple-200 flex items-center has-checked:bg-blue-50 has-checked:border-purple-600">
       <input type="radio" name="plan" className="hidden" />
