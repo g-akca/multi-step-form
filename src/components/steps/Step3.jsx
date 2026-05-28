@@ -1,4 +1,4 @@
-import AddOnItem from "./AddonItem";
+import AddOnItem from "./AddOnItem";
 
 function Step3() {
   return (
