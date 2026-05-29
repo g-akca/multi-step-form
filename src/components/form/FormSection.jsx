@@ -72,7 +72,7 @@ function FormSection({ currentStep }) {
     1: <Step1 />,
     2: <Step2 plans={plans} />,
     3: <Step3 addons={addons} />,
-    4: <Step4 />
+    4: <Step4 plans={plans} addons={addons} />
   }
 
   return (
