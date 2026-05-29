@@ -1,37 +1,7 @@
 import { useFormContext } from "react-hook-form";
 import AddOnItem from "./AddOnItem";
 
-const addons = [
-  {
-    id: "service",
-    name: "Online service",
-    details: "Access to multiplayer games",
-    price: {
-      monthly: 1,
-      yearly: 10
-    }
-  },
-  {
-    id: "storage",
-    name: "Larger storage",
-    details: "Extra 1TB of cloud save",
-    price: {
-      monthly: 2,
-      yearly: 20
-    }
-  },
-  {
-    id: "profile",
-    name: "Customizable profile",
-    details: "Custom theme on your profile",
-    price: {
-      monthly: 2,
-      yearly: 20
-    }
-  }
-];
-
-function Step3() {
+function Step3({ addons }) {
   const { watch, register } = useFormContext();
   const billing = watch("billing");
 

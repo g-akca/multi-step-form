@@ -1,41 +1,8 @@
 import { useFormContext } from "react-hook-form";
 import PlanItem from "./PlanItem";
 import SwitchButton from "./SwitchButton";
-import arcadeIcon from "/images/icon-arcade.svg";
-import advancedIcon from "/images/icon-advanced.svg";
-import proIcon from "/images/icon-pro.svg";
 
-const plans = [
-  {
-    id: "arcade",
-    name: "Arcade",
-    icon: arcadeIcon,
-    price: {
-      monthly: 9,
-      yearly: 90
-    }
-  },
-  {
-    id: "advanced",
-    name: "Advanced",
-    icon: advancedIcon,
-    price: {
-      monthly: 12,
-      yearly: 120
-    }
-  },
-  {
-    id: "pro",
-    name: "Pro",
-    icon: proIcon,
-    price: {
-      monthly: 15,
-      yearly: 150
-    }
-  }
-];
-
-function Step2() {
+function Step2({ plans }) {
   const { register, watch, setValue } = useFormContext();
   const billing = watch("billing");
 
