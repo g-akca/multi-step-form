@@ -1,6 +1,6 @@
 import { useFormContext } from "react-hook-form";
 
-function Step4({ plans, addons }) {
+function Step4({ plans, addons, goToStep2 }) {
   const { watch } = useFormContext();
   const billing = watch("billing");
   const selectedPlanId = watch("plan");
@@ -33,7 +33,7 @@ function Step4({ plans, addons }) {
           <div className="flex gap-4 justify-between items-center">
             <div>
               <p className="text-[14px] leading-base text-blue-950 font-medium">{selectedPlan.name} ({billing === "monthly" ? "Monthly" : "Yearly"})</p>
-              <button type="button" className="text-[14px] leading-[120%]">Change</button>
+              <button type="button" className="text-[14px] leading-[120%]" onClick={goToStep2}>Change</button>
             </div>
 
             <p className="text-[14px] leading-[120%] text-blue-950 font-bold">${planPrice}/{billing === "monthly" ? "mo" : "yr"}</p>

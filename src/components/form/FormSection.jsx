@@ -67,12 +67,12 @@ const addons = [
   }
 ];
 
-function FormSection({ currentStep }) {
+function FormSection({ currentStep, goToStep2 }) {
   const steps = {
     1: <Step1 />,
     2: <Step2 plans={plans} />,
     3: <Step3 addons={addons} />,
-    4: <Step4 plans={plans} addons={addons} />
+    4: <Step4 plans={plans} addons={addons} goToStep2={goToStep2} />
   }
 
   return (
