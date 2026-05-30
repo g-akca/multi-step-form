@@ -29,8 +29,15 @@ function Step4({ plans, addons }) {
       </div>
 
       <div className="flex flex-col gap-6 text-[14px] leading-[120%]">
-        <div className="bg-blue-50 p-4 rounded-lg">
+        <div className="bg-blue-50 p-4 rounded-lg flex flex-col gap-4">
+          <div className="flex gap-4 justify-between items-center">
+            <div>
+              <p className="text-[14px] leading-base text-blue-950 font-medium">{selectedPlan.name} ({billing === "monthly" ? "Monthly" : "Yearly"})</p>
+              <button type="button" className="text-[14px] leading-[120%]">Change</button>
+            </div>
 
+            <p className="text-[14px] leading-[120%] text-blue-950 font-bold">${planPrice}/{billing === "monthly" ? "mo" : "yr"}</p>
+          </div>
         </div>
 
         <div className="px-4 flex justify-between items-center">
