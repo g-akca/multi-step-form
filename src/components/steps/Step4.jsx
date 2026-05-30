@@ -38,6 +38,19 @@ function Step4({ plans, addons, goToStep2 }) {
 
             <p className="text-[14px] leading-[120%] text-blue-950 font-bold">${planPrice}/{billing === "monthly" ? "mo" : "yr"}</p>
           </div>
+
+          {selectedAddons.length > 0 && (
+            <>
+              <hr className="border-grey-500/20" />
+
+              {selectedAddons.map(addon => (
+                <div className="flex gap-4 items-center justify-between text-[14px] leading-[120%]">
+                  <p>{addon.name}</p>
+                  <p className="text-blue-950">+${billing === "monthly" ? `${addon.price.monthly}/mo` : `${addon.price.yearly}/yr`}</p>
+                </div>
+              ))}
+            </>
+          )}
         </div>
 
         <div className="px-4 flex justify-between items-center">
