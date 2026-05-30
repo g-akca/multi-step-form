@@ -2,6 +2,7 @@ import Step1 from "../steps/Step1";
 import Step2 from "../steps/Step2";
 import Step3 from "../steps/Step3";
 import Step4 from "../steps/Step4";
+import Step5 from "../steps/Step5";
 
 import arcadeIcon from "/images/icon-arcade.svg";
 import advancedIcon from "/images/icon-advanced.svg";
@@ -72,7 +73,8 @@ function FormSection({ currentStep, goToStep2 }) {
     1: <Step1 />,
     2: <Step2 plans={plans} />,
     3: <Step3 addons={addons} />,
-    4: <Step4 plans={plans} addons={addons} goToStep2={goToStep2} />
+    4: <Step4 plans={plans} addons={addons} goToStep2={goToStep2} />,
+    5: <Step5 />
   }
 
   return (
