@@ -30,14 +30,25 @@ function App() {
   }
 
   return (
-    <div className="text-base leading-base text-grey-500 min-h-screen bg-blue-100 flex flex-col pt-8 pb-26 bg-[url('/images/bg-sidebar-mobile.svg')] bg-no-repeat bg-top bg-contain">
-      <main className="grow flex flex-col gap-8">
+    <div 
+      className="
+        text-base leading-base text-grey-500 min-h-screen bg-blue-100 flex flex-col pt-8 pb-26 
+        bg-[url('/images/bg-sidebar-mobile.svg')] bg-no-repeat bg-top bg-contain tablet:bg-none
+        tablet:px-10.25 tablet:py-16 tablet:justify-center tablet:items-center
+      "
+    >
+      <main 
+        className="
+          grow flex flex-col gap-8 max-w-235 tablet:grow-0 tablet:flex-row tablet:bg-white tablet:rounded-[15px] 
+          tablet:shadow-[0_25px_40px_rgba(0,0,0,0.095)] tablet:pr-14.5 tablet:min-h-150 tablet:gap-10.5
+        "
+      >
         <StepList 
           currentStep={currentStep} 
         />
 
         <FormProvider {...methods}>
-          <form className="grow flex flex-col gap-6 justify-between px-4">
+          <form className="grow flex flex-col gap-6 justify-between px-4 tablet:px-0 tablet:pt-10.75 tablet:pb-8">
             <FormSection
               currentStep={currentStep}
               goToStep2={() => setCurrentStep(2)}
