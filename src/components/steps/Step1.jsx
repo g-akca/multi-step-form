@@ -39,7 +39,7 @@ function Step1() {
             id="phone"
             type="tel"
             placeholder="e.g. +1 234 567 890"
-            className="px-4 py-2 h-10 rounded-sm border border-purple-200 text-[14px] leading-base font-medium text-center"
+            className="px-4 py-2 h-10 rounded-sm border border-purple-200 text-[14px] leading-base font-medium"
             {...register("phone")}
           />
         </div>
