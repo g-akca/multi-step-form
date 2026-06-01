@@ -1,6 +1,12 @@
 function FormFooter({ currentStep, goNextStep, goPrevStep }) {
   return (
-    <div className={`fixed bottom-0 left-0 w-screen p-4 bg-white shadow-[0_25px_40px_rgba(0,0,0,0.095)] flex items-center ${currentStep >= 2 ? "justify-between" : "justify-end"}`}>
+    <div 
+      className={`
+        fixed bottom-0 left-0 w-screen p-4 bg-white shadow-[0_25px_40px_rgba(0,0,0,0.095)] 
+        flex items-center ${currentStep >= 2 ? "justify-between" : "justify-end"} tablet:relative 
+        tablet:w-auto tablet:shadow-none tablet:p-0 tablet:bg-transparent
+      `}
+    >
       {currentStep >= 2 && (
         <button
           type="button"
@@ -14,7 +20,10 @@ function FormFooter({ currentStep, goNextStep, goPrevStep }) {
       <button 
         type="button" 
         onClick={goNextStep}
-        className={`h-10 w-24.25 px-4 rounded-sm text-white text-[14px] leading-base font-medium ${currentStep <= 3 ? "bg-blue-950" : "bg-purple-600"}`}
+        className={`
+          h-10 w-24.25 px-4 rounded-sm text-white text-[14px] leading-base font-medium ${currentStep <= 3 ? "bg-blue-950" : "bg-purple-600"} 
+          tablet:h-12 tablet:w-30.75 tablet:rounded-lg tablet:text-base tablet:leading-[120%]
+        `}
       >
         {currentStep <= 3 ? "Next Step" : "Confirm"}
       </button>
