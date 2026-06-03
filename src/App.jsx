@@ -34,7 +34,7 @@ function App() {
       className="
         text-base leading-base text-grey-500 min-h-screen bg-blue-100 flex flex-col pt-8 pb-26 
         bg-[url('/images/bg-sidebar-mobile.svg')] bg-no-repeat bg-top bg-contain tablet:bg-none
-        tablet:px-10.25 tablet:py-16 tablet:justify-center tablet:items-center
+        tablet:px-10.25 tablet:py-12 tablet:justify-center tablet:items-center
       "
     >
       <main 

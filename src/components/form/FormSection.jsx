@@ -78,7 +78,12 @@ function FormSection({ currentStep, goToStep2 }) {
   }
 
   return (
-    <div className="bg-white rounded-[10px] px-6 py-8 flex flex-col gap-6 shadow-[0_25px_40px_rgba(0,0,0,0.095)]">
+    <div 
+      className="
+        bg-white rounded-[10px] px-6 py-8 flex flex-col gap-6 shadow-[0_25px_40px_rgba(0,0,0,0.095)] 
+        tablet:bg-transparent tablet:rounded-none tablet:shadow-none tablet:p-0
+      "
+    >
       {steps[currentStep] || <p className="py-6 text-center text-red-500">An error occurred.</p>}
     </div>
   )
