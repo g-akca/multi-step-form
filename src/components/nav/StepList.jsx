@@ -28,7 +28,7 @@ function StepList({ currentStep }) {
             key={step.number}
             number={step.number}
             title={step.title}
-            isCurrent={step === currentStep || (step === 4 && currentStep === 5)}
+            isCurrent={step.number === currentStep || (step.number === 4 && currentStep === 5)}
           />
         ))}
       </div>
