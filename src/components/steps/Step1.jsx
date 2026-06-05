@@ -6,18 +6,18 @@ function Step1() {
   return (
     <>
       <div className="flex flex-col gap-2">
-        <h2 className="text-blue-950 text-[24px] leading-[120%] font-bold">Personal info</h2>
+        <h2 className="text-blue-950 text-[24px] leading-[120%] font-bold tablet:text-[32px]">Personal info</h2>
         <p>Please provide your name, email address, and phone number.</p>
       </div>
       
-      <div className="flex flex-col gap-4 text-blue-950 text-[12px] leading-[120%]">
+      <div className="flex flex-col gap-4 text-blue-950 text-[12px] leading-[120%] tablet:gap-6 tablet:text-[14px]">
         <div className="flex flex-col gap-2">
           <label htmlFor="name">Name</label>
           <input
             id="name"
             type="text"
             placeholder="e.g. Stephen King"
-            className="px-4 py-2 h-10 rounded-sm border border-purple-200 text-[14px] leading-base font-medium"
+            className="px-4 py-2 h-10 rounded-sm border border-purple-200 text-[14px] leading-base font-medium tablet:h-12 tablet:rounded-lg tablet:text-base tablet:leading-[120%]"
             {...register("name")}
           />
         </div>
@@ -28,7 +28,7 @@ function Step1() {
             id="email"
             type="email"
             placeholder="e.g. stephenking@lorem.com"
-            className="px-4 py-2 h-10 rounded-sm border border-purple-200 text-[14px] leading-base font-medium"
+            className="px-4 py-2 h-10 rounded-sm border border-purple-200 text-[14px] leading-base font-medium tablet:h-12 tablet:rounded-lg tablet:text-base tablet:leading-[120%]"
             {...register("email")}
           />
         </div>
@@ -39,7 +39,7 @@ function Step1() {
             id="phone"
             type="tel"
             placeholder="e.g. +1 234 567 890"
-            className="px-4 py-2 h-10 rounded-sm border border-purple-200 text-[14px] leading-base font-medium"
+            className="px-4 py-2 h-10 rounded-sm border border-purple-200 text-[14px] leading-base font-medium tablet:h-12 tablet:rounded-lg tablet:text-base tablet:leading-[120%]"
             {...register("phone")}
           />
         </div>
