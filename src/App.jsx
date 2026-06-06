@@ -39,7 +39,7 @@ function App() {
     >
       <main 
         className="
-          grow flex flex-col gap-8 max-w-235 tablet:grow-0 tablet:flex-row tablet:bg-white tablet:rounded-[15px] 
+          grow flex flex-col gap-8 max-w-235 tablet:grow-0 tablet:w-full tablet:flex-row tablet:bg-white tablet:rounded-[15px] 
           tablet:shadow-[0_25px_40px_rgba(0,0,0,0.095)] tablet:pr-14.5 tablet:min-h-150 tablet:gap-10.5
         "
       >
