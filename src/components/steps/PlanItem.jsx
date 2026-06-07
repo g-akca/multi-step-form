@@ -12,9 +12,12 @@ function PlanItem({ plan, register, monthly }) {
 
       <img className="h-10 aspect-square rounded-full" src={plan.icon} alt={plan.name} />
 
-      <div className={monthly ? "" : "flex flex-col gap-1"}>
-        <p className="leading-[120%] text-blue-950 font-medium">{plan.name}</p>
-        <p className="text-[14px] leading-[120%]">${monthly ? plan.price.monthly : plan.price.yearly}/{monthly ? "mo" : "yr"}</p>
+      <div className={monthly ? "" : "flex flex-col gap-1 tablet:grow tablet:flex-row tablet:justify-between tablet:items-center"}>
+        <div className={monthly ? "" : "flex flex-col gap-1 tablet:gap-0"}>
+          <p className="leading-[120%] text-blue-950 font-medium">{plan.name}</p>
+          <p className="text-[14px] leading-[120%]">${monthly ? plan.price.monthly : plan.price.yearly}/{monthly ? "mo" : "yr"}</p>
+        </div>
+        
         {monthly || (
           <p className="text-[12px] leading-[120%] text-blue-950">2 months free</p>
         )}

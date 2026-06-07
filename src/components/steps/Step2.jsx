@@ -9,7 +9,7 @@ function Step2({ plans }) {
   return (
     <>
       <div className="flex flex-col gap-2">
-        <h2 className="text-blue-950 text-[24px] leading-[120%] font-bold">Select your plan</h2>
+        <h2 className="text-blue-950 text-[24px] leading-[120%] font-bold tablet:text-[32px]">Select your plan</h2>
         <p>You have the option of monthly or yearly billing.</p>
       </div>
 
