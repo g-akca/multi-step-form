@@ -48,7 +48,7 @@ function App() {
         />
 
         <FormProvider {...methods}>
-          <form className="grow flex flex-col gap-6 justify-between px-4 tablet:px-0 tablet:pt-10.75 tablet:pb-8">
+          <form className={`grow flex flex-col gap-6 ${currentStep === 5 ? "justify-between tablet:justify-center" : "justify-between"} px-4 tablet:px-0 tablet:pt-10.75 tablet:pb-8`}>
             <FormSection
               currentStep={currentStep}
               goToStep2={() => setCurrentStep(2)}
