@@ -40,7 +40,7 @@ function App() {
       <main 
         className="
           grow flex flex-col gap-8 max-w-235 tablet:grow-0 tablet:w-full tablet:flex-row tablet:bg-white tablet:rounded-[15px] 
-          tablet:shadow-[0_25px_40px_rgba(0,0,0,0.095)] tablet:pr-14.5 tablet:min-h-150 tablet:gap-10.5
+          tablet:shadow-[0_25px_40px_rgba(0,0,0,0.095)] tablet:pr-14.5 tablet:min-h-150 tablet:gap-10.5 desktop:pr-25 desktop:gap-21
         "
       >
         <StepList 
@@ -48,7 +48,12 @@ function App() {
         />
 
         <FormProvider {...methods}>
-          <form className={`grow flex flex-col gap-6 ${currentStep === 5 ? "justify-between tablet:justify-center" : "justify-between"} px-4 tablet:px-0 tablet:pt-10.75 tablet:pb-8`}>
+          <form 
+            className={`
+              grow flex flex-col gap-6 ${currentStep === 5 ? "justify-between tablet:justify-center" : "justify-between"} px-4 
+              tablet:px-0 tablet:pt-10.75 tablet:pb-8 desktop:pt-11.75 desktop:pb-12
+            `}
+          >
             <FormSection
               currentStep={currentStep}
               goToStep2={() => setCurrentStep(2)}
