@@ -13,8 +13,8 @@ function Step2({ plans }) {
         <p>You have the option of monthly or yearly billing.</p>
       </div>
 
-      <div className="flex flex-col gap-6">
-        <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-6 desktop:gap-8">
+        <div className="flex flex-col gap-2 desktop:grid desktop:grid-cols-3 desktop:gap-4.5">
           {plans.map(plan => (
             <PlanItem 
               key={plan.id}
