@@ -2,7 +2,7 @@ import thankYouIcon from "/images/icon-thank-you.svg";
 
 function Step5() {
   return (
-    <div className="py-12 flex flex-col gap-6 tablet:py-0 tablet:px-4.75 tablet:gap-8">
+    <div className="py-12 flex flex-col gap-6 tablet:py-0 tablet:px-4.75 tablet:gap-8 desktop:px-0">
       <img src={thankYouIcon} alt="Thank you icon" className="w-14 aspect-square self-center tablet:w-20" />
 
       <div className="flex flex-col gap-2 text-center tablet:gap-4">

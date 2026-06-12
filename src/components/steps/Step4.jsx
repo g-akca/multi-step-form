@@ -29,8 +29,8 @@ function Step4({ plans, addons, goToStep2 }) {
       </div>
 
       <div className="flex flex-col gap-6 text-[14px] leading-[120%] tablet:gap-8">
-        <div className="bg-blue-50 p-4 rounded-lg flex flex-col gap-4">
-          <div className="flex gap-4 justify-between items-center tablet:px-1">
+        <div className="bg-blue-50 p-4 rounded-lg flex flex-col gap-4 desktop:px-6">
+          <div className="flex gap-4 justify-between items-center tablet:px-1 desktop:px-0">
             <div className="flex flex-col items-start tablet:gap-2">
               <p className="leading-base text-blue-950 font-medium tablet:text-base tablet:leading-[120%]">{selectedPlan.name} ({billing === "monthly" ? "Monthly" : "Yearly"})</p>
               <button type="button" onClick={goToStep2}>Change</button>
@@ -44,8 +44,9 @@ function Step4({ plans, addons, goToStep2 }) {
               <hr className="border-grey-500/20" />
 
               {selectedAddons.map(addon => (
-                <div className="flex gap-4 items-center justify-between tablet:px-1">
+                <div className="flex gap-4 items-center justify-between tablet:px-1 desktop:px-0">
                   <p>{addon.name}</p>
+                  
                   <p className="text-blue-950">+${billing === "monthly" ? `${addon.price.monthly}/mo` : `${addon.price.yearly}/yr`}</p>
                 </div>
               ))}
@@ -53,7 +54,7 @@ function Step4({ plans, addons, goToStep2 }) {
           )}
         </div>
 
-        <div className="px-4 flex justify-between items-center tablet:px-[22.5px]">
+        <div className="px-4 flex justify-between items-center tablet:px-[22.5px] desktop:px-6">
           <p>Total (per {billing === "monthly" ? "month" : "year"})</p>
           
           <p className="font-bold text-base leading-5 text-purple-600 tablet:text-[20px]">+${total}/{billing === "monthly" ? "mo" : "yr"}</p>
