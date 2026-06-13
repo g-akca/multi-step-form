@@ -18,11 +18,28 @@ function App() {
       storage: false,
       profile: false
     },
-    shouldUnregister: false
+    shouldUnregister: false,
+    mode: "onChange",
   });
 
   function goNextStep() {
-    if (currentStep <= 4) setCurrentStep(prev => prev + 1);
+    if (currentStep > 4) return;
+
+    const stepFields = {
+      1: ["name", "email", "phone"],
+      2: ["plan", "billing"],
+      3: ["service", "storage", "profile"],
+    };
+
+    const fieldsToValidate = stepFields[currentStep] ?? [];
+
+    if (fieldsToValidate.length > 0) {
+      methods.trigger(fieldsToValidate).then(valid => {
+        if (valid) setCurrentStep(prev => prev + 1);
+      });
+    } else {
+      setCurrentStep(prev => prev + 1);
+    }
   }
 
   function goPrevStep() {
