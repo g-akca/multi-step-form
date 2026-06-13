@@ -15,7 +15,7 @@ function Step1() {
           <div className="flex gap-2 items-center justify-between">
             <label htmlFor="name">Name</label>
 
-            {errors.name && <p className="text-red-500 font-bold">{errors.name.message}</p>}
+            {errors.name && <p className="text-red-500 font-bold tracking-[1px]">{errors.name.message}</p>}
           </div>
 
           <input
@@ -35,7 +35,7 @@ function Step1() {
           <div className="flex gap-2 items-center justify-between">
             <label htmlFor="email">Email Address</label>
 
-            {errors.email && <p className="text-red-500 font-bold">{errors.email.message}</p>}
+            {errors.email && <p className="text-red-500 font-bold tracking-[1px]">{errors.email.message}</p>}
           </div>
 
           <input
@@ -55,7 +55,7 @@ function Step1() {
           <div className="flex gap-2 items-center justify-between">
             <label htmlFor="phone">Phone Number</label>
 
-            {errors.phone && <p className="text-red-500 font-bold">{errors.phone.message}</p>}
+            {errors.phone && <p className="text-red-500 font-bold tracking-[1px]">{errors.phone.message}</p>}
           </div>
           
           <input
