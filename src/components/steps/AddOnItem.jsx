@@ -15,7 +15,7 @@ function AddOnItem({ addon, monthly, register }) {
           {...register(addon.id)} 
         />
 
-        <div className="tablet:gap-2">
+        <div className="flex flex-col tablet:gap-2">
           <p className="text-blue-950 text-[14px] leading-base font-medium tablet:text-[16px] tablet:leading-[120%]">{addon.name}</p>
           <p className="text-[12px] leading-[120%] tablet:text-[14px]">{addon.details}</p>
         </div>
