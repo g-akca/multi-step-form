@@ -2,7 +2,7 @@ function PlanItem({ plan, register, monthly }) {
   return (
     <label 
       className="
-        h-20 p-4 rounded-lg bg-white border border-purple-200 flex gap-4 items-center 
+        h-20 p-4 rounded-lg bg-white border border-purple-200 flex gap-4 items-center cursor-pointer transition-all duration-300 hover:border-purple-600
         has-checked:bg-blue-50 has-checked:border-purple-600 desktop:h-40 desktop:flex-col desktop:justify-between desktop:items-start
       "
     >

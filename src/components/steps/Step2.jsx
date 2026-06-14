@@ -26,11 +26,11 @@ function Step2({ plans }) {
         </div>
 
         <div className="bg-blue-50 rounded-lg h-12 flex justify-center items-center gap-6 text-[14px] leading-base font-medium">
-          <p className={billing === "monthly" ? "text-blue-950" : ""}>Monthly</p>
+          <p className={`transition-all duration-200 ${billing === "monthly" ? "text-blue-950" : ""}`}>Monthly</p>
           
           <SwitchButton billing={billing} setBilling={value => setValue("billing", value)} />
 
-          <p className={billing !== "monthly" ? "text-blue-950" : ""}>Yearly</p>
+          <p className={`transition-all duration-200 ${billing !== "monthly" ? "text-blue-950" : ""}`}>Yearly</p>
         </div>
       </div>
     </>
