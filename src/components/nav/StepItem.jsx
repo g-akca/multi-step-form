@@ -1,7 +1,7 @@
 function StepItem({ number, title, isCurrent }) {
   return (
     <div className="contents tablet:flex tablet:gap-4 tablet:items-center">
-      <div className={`rounded-full w-8.25 aspect-square flex justify-center items-center text-[14px] leading-[120%] tracking-[-1px] font-bold ${isCurrent ? "bg-blue-200 text-blue-950" : "text-white border border-white"}`}>
+      <div className={`rounded-full w-8.25 aspect-square flex justify-center items-center text-[14px] leading-[120%] tracking-[-1px] font-bold border transition-all ${isCurrent ? "bg-blue-200 border-blue-200 text-blue-950" : "text-white border-white"}`}>
         {number}
       </div>
 
