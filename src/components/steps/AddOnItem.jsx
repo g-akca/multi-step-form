@@ -3,7 +3,8 @@ function AddOnItem({ addon, monthly, register }) {
     <label 
       className="
         px-4 py-[13.5px] flex gap-4 items-center justify-between rounded-lg bg-white border border-purple-200 
-        has-checked:bg-blue-50 has-checked:border-purple-600 tablet:px-6 tablet:py-4
+        cursor-pointer transition-all duration-300 hover:border-purple-600 has-checked:bg-blue-50 
+        has-checked:border-purple-600 tablet:px-6 tablet:py-4
       "
     >
       <div className="flex gap-4 items-center tablet:gap-6">
