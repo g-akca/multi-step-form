@@ -1,4 +1,4 @@
-function FormFooter({ currentStep, goPrevStep }) {
+function FormFooter({ currentStep, goPrevStep, disabled }) {
   return (
     <div 
       className={`
@@ -11,7 +11,8 @@ function FormFooter({ currentStep, goPrevStep }) {
         <button
           type="button"
           onClick={goPrevStep}
-          className="leading-[120%] font-medium cursor-pointer transition-all duration-300 hover:text-blue-950"
+          disabled={disabled}
+          className="leading-[120%] font-medium cursor-pointer transition-all duration-300 hover:text-blue-950 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Go Back
         </button>
@@ -19,10 +20,12 @@ function FormFooter({ currentStep, goPrevStep }) {
 
       <button 
         type="submit" 
+        disabled={disabled}
         className={`
           h-10 w-24.25 px-4 rounded-sm text-white text-[14px] leading-base font-medium cursor-pointer transition-all duration-300
           ${currentStep <= 3 ? "bg-blue-950 hover:bg-blue-700" : "bg-purple-600 hover:bg-purple-400"} 
           tablet:h-12 tablet:w-30.75 tablet:rounded-lg tablet:text-base tablet:leading-[120%]
+          disabled:opacity-50 disabled:cursor-not-allowed
         `}
       >
         {currentStep <= 3 ? "Next Step" : "Confirm"}

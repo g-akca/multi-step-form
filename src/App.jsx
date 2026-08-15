@@ -1,11 +1,13 @@
 import StepList from "./components/nav/StepList";
 import FormSection from "./components/form/FormSection";
 import FormFooter from "./components/form/FormFooter";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
+  const [isValidating, setIsValidating] = useState(false);
+  const isNavigatingRef = useRef(false);
 
   const methods = useForm({
     defaultValues: {
@@ -23,7 +25,7 @@ function App() {
   });
 
   function goNextStep() {
-    if (currentStep > 4) return;
+    if (currentStep > 4 || isNavigatingRef.current) return;
 
     const stepFields = {
       1: ["name", "email", "phone"],
@@ -34,8 +36,13 @@ function App() {
     const fieldsToValidate = stepFields[currentStep] ?? [];
 
     if (fieldsToValidate.length > 0) {
+      isNavigatingRef.current = true;
+      setIsValidating(true);
       methods.trigger(fieldsToValidate).then(valid => {
         if (valid) setCurrentStep(prev => prev + 1);
+      }).finally(() => {
+        isNavigatingRef.current = false;
+        setIsValidating(false);
       });
     } else {
       setCurrentStep(prev => prev + 1);
@@ -86,6 +93,7 @@ function App() {
               <FormFooter 
                 currentStep={currentStep}
                 goPrevStep={goPrevStep} 
+                disabled={isValidating}
               />
             )}
           </form>
