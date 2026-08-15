@@ -1,4 +1,4 @@
-function FormFooter({ currentStep, goNextStep, goPrevStep }) {
+function FormFooter({ currentStep, goPrevStep }) {
   return (
     <div 
       className={`
@@ -18,8 +18,7 @@ function FormFooter({ currentStep, goNextStep, goPrevStep }) {
       )}
 
       <button 
-        type="button" 
-        onClick={goNextStep}
+        type="submit" 
         className={`
           h-10 w-24.25 px-4 rounded-sm text-white text-[14px] leading-base font-medium cursor-pointer transition-all duration-300
           ${currentStep <= 3 ? "bg-blue-950 hover:bg-blue-700" : "bg-purple-600 hover:bg-purple-400"} 

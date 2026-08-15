@@ -46,6 +46,11 @@ function App() {
     if (currentStep >= 2) setCurrentStep(prev => prev - 1);
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    goNextStep();
+  }
+
   return (
     <div 
       className="
@@ -66,6 +71,7 @@ function App() {
 
         <FormProvider {...methods}>
           <form 
+            onSubmit={handleSubmit}
             className={`
               grow flex flex-col gap-6 ${currentStep === 5 ? "justify-between tablet:justify-center" : "justify-between"} px-4 
               tablet:px-0 tablet:pt-10.75 tablet:pb-8 desktop:pt-11.75 desktop:pb-12
@@ -79,7 +85,6 @@ function App() {
             {currentStep <= 4 && (
               <FormFooter 
                 currentStep={currentStep}
-                goNextStep={goNextStep} 
                 goPrevStep={goPrevStep} 
               />
             )}
