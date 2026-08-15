@@ -15,7 +15,8 @@ function PlanSelectionStep() {
       </div>
 
       <div className="flex flex-col gap-6 desktop:gap-8">
-        <div className="flex flex-col gap-2 desktop:grid desktop:grid-cols-3 desktop:gap-4.5">
+        <fieldset className="flex flex-col gap-2 desktop:grid desktop:grid-cols-3 desktop:gap-4.5">
+          <legend className="sr-only">Select a plan</legend>
           {plans.map(plan => (
             <PlanItem 
               key={plan.id}
@@ -24,7 +25,7 @@ function PlanSelectionStep() {
               monthly={billing === "monthly"}
             />
           ))}
-        </div>
+        </fieldset>
 
         <div className="bg-blue-50 rounded-lg h-12 flex justify-center items-center gap-6 text-[14px] leading-base font-medium">
           <p className={`transition-all duration-200 ${billing === "monthly" ? "text-blue-950" : ""}`}>Monthly</p>

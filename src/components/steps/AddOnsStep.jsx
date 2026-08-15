@@ -13,7 +13,8 @@ function AddOnsStep() {
         <p>Add-ons help enhance your gaming experience.</p>
       </div>
 
-      <div className="flex flex-col gap-2 tablet:gap-4">
+      <fieldset className="flex flex-col gap-2 tablet:gap-4">
+        <legend className="sr-only">Select add-ons</legend>
         {addons.map(addon => (
           <AddOnItem
             key={addon.id}
@@ -22,7 +23,7 @@ function AddOnsStep() {
             register={register}
           />
         ))}
-      </div>
+      </fieldset>
     </>
   )
 }
