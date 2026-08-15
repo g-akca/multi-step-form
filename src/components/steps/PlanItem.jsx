@@ -15,7 +15,7 @@ function PlanItem({ plan, register, monthly }) {
         {...register("plan")}
       />
 
-      <img className="h-10 aspect-square rounded-full" src={plan.icon} alt={plan.name} />
+      <img className="h-10 aspect-square rounded-full" src={plan.icon} alt="" />
 
       <div className={monthly ? "" : "flex flex-col gap-1 tablet:grow tablet:flex-row tablet:justify-between tablet:items-center desktop:gap-2 desktop:flex-col desktop:items-start desktop:justify-end"}>
         <div className={monthly ? "" : "flex flex-col gap-1 tablet:gap-0"}>

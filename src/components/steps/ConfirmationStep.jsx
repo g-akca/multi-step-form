@@ -3,7 +3,7 @@ import thankYouIcon from "/images/icon-thank-you.svg";
 function ConfirmationStep() {
   return (
     <div className="py-12 flex flex-col gap-6 tablet:py-0 tablet:px-4.75 tablet:gap-8 desktop:px-0">
-      <img src={thankYouIcon} alt="Thank you icon" className="w-14 aspect-square self-center tablet:w-20" />
+      <img src={thankYouIcon} alt="" className="w-14 aspect-square self-center tablet:w-20" />
 
       <div className="flex flex-col gap-2 text-center tablet:gap-4">
         <h2 className="text-[24px] leading-[120%] text-blue-950 font-bold tablet:text-[32px]">Thank you!</h2>
