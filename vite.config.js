@@ -6,4 +6,11 @@ import tailwindcss from "@tailwindcss/vite"
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: "/multi-step-form/",
+  esbuild: {
+    jsx: "automatic",
+  },
+  test: {
+    environment: "jsdom",
+    setupFiles: "./src/test/setup.js",
+  },
 })
