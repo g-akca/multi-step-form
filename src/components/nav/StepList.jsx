@@ -21,8 +21,8 @@ const steps = [
 
 function StepList({ currentStep }) {
   return (
-    <div className="shrink-0 self-center flex gap-4 items-center tablet:self-stretch tablet:items-stretch tablet:p-4">
-      <div className="contents tablet:flex tablet:flex-col tablet:gap-8 tablet:py-10 tablet:px-6 tablet:bg-[url('/images/bg-sidebar-desktop.svg')] tablet:bg-no-repeat tablet:bg-cover tablet:bg-bottom-left tablet:rounded-[10px] desktop:px-8 desktop:w-68.5">
+    <nav aria-label="Progress" className="shrink-0 self-center flex gap-4 items-center tablet:self-stretch tablet:items-stretch tablet:p-4">
+      <ol className="contents tablet:flex tablet:flex-col tablet:gap-8 tablet:py-10 tablet:px-6 tablet:bg-[url('/images/bg-sidebar-desktop.svg')] tablet:bg-no-repeat tablet:bg-cover tablet:bg-bottom-left tablet:rounded-[10px] desktop:px-8 desktop:w-68.5">
         {steps.map(step => (
           <StepItem
             key={step.number}
@@ -31,8 +31,8 @@ function StepList({ currentStep }) {
             isCurrent={step.number === currentStep || (step.number === 4 && currentStep === 5)}
           />
         ))}
-      </div>
-    </div>
+      </ol>
+    </nav>
   )
 }
 
