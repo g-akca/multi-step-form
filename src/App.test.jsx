@@ -79,6 +79,21 @@ describe("multi-step form navigation", () => {
     expect(screen.getByText("+$2/mo")).toBeInTheDocument();
     expect(screen.getByText("+$15/mo")).toBeInTheDocument();
 
+    await user.click(screen.getByRole("button", { name: "Change" }));
+    await waitFor(() => {
+      expect(screen.getByRole("heading", { name: "Select your plan" })).toHaveFocus();
+    });
+
+    await user.click(getEnabledNextButton());
+    await waitFor(() => {
+      expectStepStatus("Step 3: Pick add-ons");
+    });
+
+    await user.click(getEnabledNextButton());
+    await waitFor(() => {
+      expectStepStatus("Step 4: Finishing up");
+    });
+
     await user.click(screen.getByRole("button", { name: "Go Back" }));
     await waitFor(() => {
       expectStepStatus("Step 3: Pick add-ons");

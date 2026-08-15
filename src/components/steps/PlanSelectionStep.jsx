@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useFormContext } from "react-hook-form";
 import PlanItem from "./PlanItem";
 import SwitchButton from "./SwitchButton";
@@ -6,11 +7,16 @@ import { plans } from "../../data/formData";
 function PlanSelectionStep() {
   const { register, watch, setValue } = useFormContext();
   const billing = watch("billing");
+  const headingRef = useRef(null);
+
+  useEffect(() => {
+    headingRef.current?.focus();
+  }, []);
 
   return (
     <>
       <div className="flex flex-col gap-2">
-        <h2 className="text-blue-950 text-[24px] leading-[120%] font-bold tablet:text-[32px]">Select your plan</h2>
+        <h2 ref={headingRef} tabIndex="-1" className="text-blue-950 text-[24px] leading-[120%] font-bold tablet:text-[32px]">Select your plan</h2>
         <p>You have the option of monthly or yearly billing.</p>
       </div>
 
