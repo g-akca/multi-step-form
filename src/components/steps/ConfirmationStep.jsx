@@ -1,6 +1,6 @@
 import thankYouIcon from "/images/icon-thank-you.svg";
 
-function Step5() {
+function ConfirmationStep() {
   return (
     <div className="py-12 flex flex-col gap-6 tablet:py-0 tablet:px-4.75 tablet:gap-8 desktop:px-0">
       <img src={thankYouIcon} alt="Thank you icon" className="w-14 aspect-square self-center tablet:w-20" />
@@ -14,4 +14,4 @@ function Step5() {
   )
 }
 
-export default Step5;
+export default ConfirmationStep;

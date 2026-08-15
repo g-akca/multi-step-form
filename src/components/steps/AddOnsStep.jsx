@@ -1,7 +1,7 @@
 import { useFormContext } from "react-hook-form";
 import AddOnItem from "./AddOnItem";
 
-function Step3({ addons }) {
+function AddOnsStep({ addons }) {
   const { watch, register } = useFormContext();
   const billing = watch("billing");
 
@@ -26,4 +26,4 @@ function Step3({ addons }) {
   )
 }
 
-export default Step3;
+export default AddOnsStep;

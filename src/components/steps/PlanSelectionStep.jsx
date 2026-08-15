@@ -2,7 +2,7 @@ import { useFormContext } from "react-hook-form";
 import PlanItem from "./PlanItem";
 import SwitchButton from "./SwitchButton";
 
-function Step2({ plans }) {
+function PlanSelectionStep({ plans }) {
   const { register, watch, setValue } = useFormContext();
   const billing = watch("billing");
 
@@ -37,4 +37,4 @@ function Step2({ plans }) {
   )
 }
 
-export default Step2;
+export default PlanSelectionStep;

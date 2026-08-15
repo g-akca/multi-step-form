@@ -1,6 +1,6 @@
 import { useFormContext } from "react-hook-form";
 
-function Step1() {
+function PersonalInfoStep() {
   const { register, formState: { errors } } = useFormContext();
 
   return (
@@ -75,4 +75,4 @@ function Step1() {
   )
 }
 
-export default Step1;
+export default PersonalInfoStep;
