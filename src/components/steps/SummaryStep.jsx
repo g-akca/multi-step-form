@@ -5,19 +5,12 @@ function SummaryStep({ goToStep2 }) {
   const { watch } = useFormContext();
   const billing = watch("billing");
   const selectedPlanId = watch("plan");
-  const service = watch("service");
-  const storage = watch("storage");
-  const profile = watch("profile");
+  const watchedAddons = watch();
 
   const selectedPlan = plans.find(plan => plan.id === selectedPlanId);
   const planPrice = billing === "monthly" ? selectedPlan.price.monthly : selectedPlan.price.yearly;
 
-  const selectedAddons = addons.filter(addon => {
-    if (addon.id === "service") return service;
-    if (addon.id === "storage") return storage;
-    if (addon.id === "profile") return profile;
-    return false;
-  });
+  const selectedAddons = addons.filter(addon => watchedAddons[addon.id]);
   const addonsPrice = selectedAddons.reduce((sum, addon) => sum + (billing === "monthly" ? addon.price.monthly : addon.price.yearly), 0);
 
   const total = planPrice + addonsPrice;
