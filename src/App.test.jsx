@@ -25,7 +25,24 @@ describe("multi-step form navigation", () => {
     await user.click(getEnabledNextButton());
 
     expectStepStatus("Step 1: Personal info");
-    expect(screen.getAllByText("This field is required")).toHaveLength(3);
+    await waitFor(() => {
+      expect(screen.getAllByText("This field is required")).toHaveLength(3);
+    });
+  });
+
+  it("keeps the user on personal info when the email address is invalid", async () => {
+    const user = userEvent.setup();
+
+    renderApp();
+    await user.type(screen.getByLabelText("Name"), "Stephen King");
+    await user.type(screen.getByLabelText("Email Address"), "stephenking.example.com");
+    await user.type(screen.getByLabelText("Phone Number"), "+1 234 567 890");
+    await user.click(getEnabledNextButton());
+
+    expectStepStatus("Step 1: Personal info");
+    await waitFor(() => {
+      expect(screen.getByText("Enter a valid email address")).toBeInTheDocument();
+    });
   });
 
   it("moves through the form and can return to the previous step", async () => {
