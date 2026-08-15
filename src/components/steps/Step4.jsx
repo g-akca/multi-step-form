@@ -55,7 +55,7 @@ function Step4({ plans, addons, goToStep2 }) {
               <hr className="border-grey-500/20" />
 
               {selectedAddons.map(addon => (
-                <div className="flex gap-4 items-center justify-between tablet:px-1 desktop:px-0">
+                <div key={addon.id} className="flex gap-4 items-center justify-between tablet:px-1 desktop:px-0">
                   <p>{addon.name}</p>
                   
                   <p className="text-blue-950">
