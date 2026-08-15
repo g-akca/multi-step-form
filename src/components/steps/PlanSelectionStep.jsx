@@ -1,8 +1,9 @@
 import { useFormContext } from "react-hook-form";
 import PlanItem from "./PlanItem";
 import SwitchButton from "./SwitchButton";
+import { plans } from "../../data/formData";
 
-function PlanSelectionStep({ plans }) {
+function PlanSelectionStep() {
   const { register, watch, setValue } = useFormContext();
   const billing = watch("billing");
 

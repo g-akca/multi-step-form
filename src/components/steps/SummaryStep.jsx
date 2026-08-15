@@ -1,6 +1,7 @@
 import { useFormContext } from "react-hook-form";
+import { addons, plans } from "../../data/formData";
 
-function SummaryStep({ plans, addons, goToStep2 }) {
+function SummaryStep({ goToStep2 }) {
   const { watch } = useFormContext();
   const billing = watch("billing");
   const selectedPlanId = watch("plan");

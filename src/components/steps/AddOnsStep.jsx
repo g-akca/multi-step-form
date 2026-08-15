@@ -1,7 +1,8 @@
 import { useFormContext } from "react-hook-form";
 import AddOnItem from "./AddOnItem";
+import { addons } from "../../data/formData";
 
-function AddOnsStep({ addons }) {
+function AddOnsStep() {
   const { watch, register } = useFormContext();
   const billing = watch("billing");
 
