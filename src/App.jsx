@@ -84,6 +84,8 @@ function App() {
               tablet:px-0 tablet:pt-10.75 tablet:pb-8 desktop:pt-11.75 desktop:pb-12
             `}
           >
+            <h1 className="sr-only">Multi-step form</h1>
+            
             <FormSection
               currentStep={currentStep}
               goToStep2={() => setCurrentStep(2)}
