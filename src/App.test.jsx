@@ -58,19 +58,45 @@ describe("multi-step form navigation", () => {
       expectStepStatus("Step 2: Select your plan");
     });
 
+    await user.click(screen.getByText("Advanced"));
     await user.click(getEnabledNextButton());
     await waitFor(() => {
       expectStepStatus("Step 3: Pick add-ons");
     });
+
+    await user.click(screen.getByText("Online service"));
+    await user.click(screen.getByText("Larger storage"));
+    await user.click(getEnabledNextButton());
+    await waitFor(() => {
+      expectStepStatus("Step 4: Finishing up");
+    });
+
+    expect(screen.getByText("Advanced (Monthly)")).toBeInTheDocument();
+    expect(screen.getByText("$12/mo")).toBeInTheDocument();
+    expect(screen.getByText("Online service")).toBeInTheDocument();
+    expect(screen.getByText("+$1/mo")).toBeInTheDocument();
+    expect(screen.getByText("Larger storage")).toBeInTheDocument();
+    expect(screen.getByText("+$2/mo")).toBeInTheDocument();
+    expect(screen.getByText("+$15/mo")).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "Go Back" }));
+    await waitFor(() => {
+      expectStepStatus("Step 3: Pick add-ons");
+    });
+
+    expect(screen.getByText("Online service").closest("label").querySelector("input")).toBeChecked();
+    expect(screen.getByText("Larger storage").closest("label").querySelector("input")).toBeChecked();
 
     await user.click(getEnabledNextButton());
     await waitFor(() => {
       expectStepStatus("Step 4: Finishing up");
     });
 
-    await user.click(screen.getByRole("button", { name: "Go Back" }));
+    await user.click(screen.getByRole("button", { name: "Confirm" }));
     await waitFor(() => {
-      expectStepStatus("Step 3: Pick add-ons");
+      expectStepStatus("Step 5: Thank you");
     });
+
+    expect(screen.getByRole("heading", { name: "Thank you!" })).toBeInTheDocument();
   });
 });
